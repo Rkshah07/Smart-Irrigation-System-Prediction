@@ -4,11 +4,12 @@ generate_index_html.py
 Builds the standalone, production-ready, interactive web application (index.html)
 for GitHub Pages deployment of the Smart Irrigation System Prediction project.
 
-Includes:
-  - Real-time client-side PySpark LinearRegression model predictor with live sliders,
-    dynamic urgency gauge, discrete badge, water application advice, and feature attribution waterfall.
+Updates:
+  - Removed student private registration/roll/section numbers from the public live app.
+  - Added a comprehensive, beginner-friendly "Plain-English Guide & Jargon Buster" section
+    explaining the project, biophysical physics, and machine learning concepts to non-technical users.
+  - Interactive real-time PySpark LinearRegression model predictor.
   - Interactive Plotly.js charts for crop trends, phenology heatmap, coefficients, and cluster scalability.
-  - Executive KPI summary cards and student credentials for Roshan Kumar (LPU).
   - Direct download links for Academic PDF Report, Excel Workbook, and Test Submissions.
 """
 
@@ -70,6 +71,7 @@ def build_index_html():
       --accent-blue: #38BDF8;
       --accent-amber: #F59E0B;
       --accent-red: #EF4444;
+      --accent-purple: #A855F7;
       --text-main: #F1F5F9;
       --text-muted: #94A3B8;
       --text-dim: #64748B;
@@ -93,7 +95,7 @@ def build_index_html():
 
     /* Top Navigation Bar */
     header {{
-      background: rgba(11, 17, 32, 0.92);
+      background: rgba(11, 17, 32, 0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-color);
       position: sticky;
@@ -146,17 +148,18 @@ def build_index_html():
     nav ul {{
       display: flex;
       list-style: none;
-      gap: 1.25rem;
+      gap: 1.1rem;
       align-items: center;
+      flex-wrap: wrap;
     }}
 
     nav a {{
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 500;
       transition: all 0.2s ease;
-      padding: 0.4rem 0.6rem;
+      padding: 0.35rem 0.6rem;
       border-radius: 6px;
     }}
 
@@ -187,7 +190,7 @@ def build_index_html():
     /* Hero Banner */
     .hero {{
       text-align: center;
-      padding: 2.5rem 1rem 3rem;
+      padding: 2.2rem 1rem 2.8rem;
       position: relative;
     }}
 
@@ -219,7 +222,7 @@ def build_index_html():
     .hero p.lead {{
       font-size: 1.15rem;
       color: var(--text-muted);
-      max-width: 860px;
+      max-width: 880px;
       margin: 0 auto 1.5rem;
       line-height: 1.6;
     }}
@@ -227,13 +230,15 @@ def build_index_html():
     .author-badge {{
       display: inline-flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.85rem;
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      padding: 0.6rem 1.2rem;
+      padding: 0.55rem 1.25rem;
       border-radius: 12px;
       font-size: 0.85rem;
       color: var(--text-muted);
+      flex-wrap: wrap;
+      justify-content: center;
     }}
 
     .author-badge strong {{
@@ -302,13 +307,13 @@ def build_index_html():
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
       padding-bottom: 0.6rem;
       border-bottom: 1px solid var(--border-color);
     }}
 
     .section-title h3 {{
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 700;
       color: #FFFFFF;
       letter-spacing: -0.4px;
@@ -322,6 +327,127 @@ def build_index_html():
       font-weight: 600;
       padding: 0.2rem 0.6rem;
       border-radius: 6px;
+    }}
+
+    /* PLAIN-ENGLISH / NON-TECHNICAL GUIDE SECTION */
+    .plain-guide-section {{
+      background: linear-gradient(145deg, #111B2E, #0E1626);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary);
+      border-radius: 18px;
+      padding: 2.25rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    }}
+
+    .guide-intro {{
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+    }}
+
+    .guide-story-grid {{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }}
+
+    @media (max-width: 900px) {{
+      .guide-story-grid {{
+        grid-template-columns: 1fr;
+      }}
+    }}
+
+    .story-card {{
+      background: rgba(11, 17, 32, 0.75);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }}
+
+    .story-icon {{
+      font-size: 1.8rem;
+      margin-bottom: 0.6rem;
+    }}
+
+    .story-card h4 {{
+      font-size: 1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+    }}
+
+    .story-card p {{
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }}
+
+    /* JARGON BUSTER ACCORDION / GRID */
+    .jargon-title {{
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      margin: 1.75rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }}
+
+    .jargon-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.1rem;
+    }}
+
+    .jargon-card {{
+      background: rgba(11, 17, 32, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.1rem;
+      transition: all 0.2s ease;
+    }}
+
+    .jargon-card:hover {{
+      border-color: rgba(16, 185, 129, 0.4);
+      background: rgba(19, 29, 49, 0.8);
+    }}
+
+    .jargon-term {{
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }}
+
+    .jargon-tech {{
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--accent-blue);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }}
+
+    .jargon-simple {{
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-top: 0.4rem;
+    }}
+
+    .jargon-analogy {{
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+      font-size: 0.8rem;
+      color: var(--primary-light);
+      font-style: italic;
     }}
 
     /* Interactive Predictor Layout */
@@ -472,11 +598,6 @@ def build_index_html():
     }}
 
     /* Gauge & Score */
-    .gauge-wrapper {{
-      text-align: center;
-      margin-bottom: 1.25rem;
-    }}
-
     .score-number {{
       font-size: 3.4rem;
       font-weight: 800;
@@ -795,11 +916,13 @@ def build_index_html():
         <div class="logo-badge">🌾 PySpark</div>
         <div class="logo-title">
           <h1>Smart Irrigation Prediction</h1>
-          <p>Cluster Computing Laboratory (INT315)</p>
+          <p>Distributed Machine Learning & Precision Agronomy</p>
         </div>
       </a>
       <nav>
         <ul>
+          <li><a href="#about-project">What is This?</a></li>
+          <li><a href="#jargon-buster">Jargon Buster</a></li>
           <li><a href="#predictor">Live Predictor</a></li>
           <li><a href="#dashboards">Analytics</a></li>
           <li><a href="#cluster">Cluster Setup</a></li>
@@ -824,15 +947,11 @@ def build_index_html():
         An enterprise-scale distributed Machine Learning pipeline in PySpark MLlib that models continuous soil hydrology, micrometeorology, and crop phenology to optimize agricultural irrigation delivery and conserve vital freshwater reserves.
       </p>
       <div class="author-badge">
-        <span>🎓 Student: <strong>Roshan Kumar</strong></span>
+        <span>👨‍💻 Lead Developer: <strong>Roshan Kumar</strong></span>
         <span>•</span>
-        <span>Reg No: <strong>12322743</strong></span>
+        <span>🏫 <strong>Lovely Professional University (Punjab, India)</strong></span>
         <span>•</span>
-        <span>Roll No: <strong>67</strong></span>
-        <span>•</span>
-        <span>Section: <strong>K4M2310A</strong></span>
-        <span>•</span>
-        <span>Institution: <strong>Lovely Professional University (LPU)</strong></span>
+        <span>🌾 <strong>Course: INT315 — Cluster Computing</strong></span>
       </div>
     </section>
 
@@ -862,6 +981,187 @@ def build_index_html():
         <div class="kpi-title">Cluster Speedup</div>
         <div class="kpi-value">4.59x</div>
         <div class="kpi-subtext">Multi-core scaling (1 vs 8 cores)</div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PLAIN-ENGLISH / NON-TECHNICAL GUIDE: WHAT IS THIS PROJECT?       -->
+    <!-- ================================================================= -->
+    <section id="about-project" class="plain-guide-section">
+      <div class="section-title">
+        <h3>🌱 Plain-English Guide: What is This Project & Why Does It Matter?</h3>
+        <span class="tag">Zero Technical Knowledge Required</span>
+      </div>
+
+      <p class="guide-intro">
+        If you have never written a line of code or studied Machine Learning, think of this project as a <strong>Digital Smart Doctor for Agricultural Crops</strong>. Just like a human needs water when dehydrated, crops need water at the exact right moment. But how does a farmer know when to turn on the pumps?
+      </p>
+
+      <div class="guide-story-grid">
+        <div class="story-card">
+          <div class="story-icon">🚫</div>
+          <h4>The Problem: Over-Watering & Under-Watering</h4>
+          <p>
+            When farmers water on a fixed calendar schedule, they often make two costly mistakes: <strong>Over-watering</strong> drowns plant roots (suffocating them of oxygen, breeding fungal rot, and wasting electricity and groundwater). <strong>Under-watering</strong> causes plants to wilt, drop their flowers, and drastically reduce the harvest.
+          </p>
+        </div>
+
+        <div class="story-card">
+          <div class="story-icon">🛰️</div>
+          <h4>The Solution: 20 Environmental Clues</h4>
+          <p>
+            Instead of guessing, we collect 20 different sensor readings: how wet the soil is, how hot the air is, how fast the wind is blowing, how salty the ground is, and what growth stage the crop is in. Every field leaves a distinct physical "footprint" of its true thirst.
+          </p>
+        </div>
+
+        <div class="story-card">
+          <div class="story-icon">🤖</div>
+          <h4>The AI Brain: Learning from 900,000 Fields</h4>
+          <p>
+            Our software analyzed <strong>900,000 real agricultural fields</strong> across diverse climates. It learned the exact mathematical formulas connecting soil moisture, temperature, and plant stage to irrigation need. It can instantly answer: <em>"Does this field need water today, and exactly how many millimeters?"</em>
+          </p>
+        </div>
+      </div>
+
+      <!-- JARGON BUSTER -->
+      <div id="jargon-buster" class="jargon-title">
+        <span>📖 The Jargon Buster: Every Technical Term Translated to Everyday English</span>
+      </div>
+
+      <div class="jargon-grid">
+
+        <div class="jargon-card">
+          <div class="jargon-term">
+            <span>Machine Learning (ML)</span>
+            <span class="jargon-tech">Empirical Fitting</span>
+          </div>
+          <p class="jargon-simple">
+            Software that improves itself by looking at historical examples instead of being manually programmed with rigid rules.
+          </p>
+          <div class="jargon-analogy">
+            💡 Like an experienced master farmer who has walked through 900,000 fields and can tell at a glance when a crop is thirsty.
+          </div>
+        </div>
+
+        <div class="jargon-card">
+          <div class="jargon-term">
+            <span>Predictive Model</span>
+            <span class="jargon-tech">Linear Regression</span>
+          </div>
+          <p class="jargon-simple">
+            A mathematical recipe that weighs each factor (e.g. subtracting for high moisture, adding for hot wind) to compute the final answer.
+          </p>
+          <div class="jargon-analogy">
+            💡 Like a recipe where 2 cups of wind + 3 degrees of heat - 5 cups of soil moisture = total plant thirst.
+          </div>
+        </div>
+
+        <div class="jargon-card">
+          <div class="jargon-term">
+            <span>Water Score (0.0 to 2.0)</span>
+            <span class="jargon-tech">Ordinal Target Mapping</span>
+          </div>
+          <p class="jargon-simple">
+            A continuous meter of plant thirst. <strong>0.0 = Low</strong> (quenched), <strong>1.0 = Medium</strong> (getting thirsty), and <strong>2.0 = High</strong> (parched emergency).
+          </p>
+          <div class="jargon-analogy">
+            💡 Like the fuel gauge on your car dashboard, but for moisture in the root zone!
+          </div>
+        </div>
+
+        <div class="jargon-card">
+          <div class="jargon-term">
+            <span>Apache Spark & Cluster Computing</span>
+            <span class="jargon-tech">Distributed Topology</span>
+          </div>
+          <p class="jargon-simple">
+            Instead of making one computer do all 900,000 heavy calculations alone (which freezes laptops), a team of coordinated computers (1 Master + 2 Workers) split the data and solve it in seconds.
+          </p>
+          <div class="jargon-analogy">
+            💡 Like 8 people harvesting an entire wheat field together instead of one person doing it alone with a sickle.
+          </div>
+        </div>
+
+        <div class="jargon-card">
+          <div class="jargon-term">
+            <span>Soil Moisture (%)</span>
+            <span class="jargon-tech">Volumetric Water Content (&theta;)</span>
+          </div>
+          <p class="jargon-simple">
+            The percentage of water trapped inside the soil pores. It is the <strong>#1 most powerful factor</strong> in predicting irrigation need (&beta; = -0.211).
+          </p>
+          <div class="jargon-analogy">
+            💡 Squeezing a handful of dirt: if it forms a ball, moisture is high; if it crumbles like dust, it is dry.
+          </div>
+        </div>
+
+        <div class="jargon-card">
+          <div class="jargon-term">
+            <span>Wind Speed & Evapotranspiration</span>
+            <span class="jargon-tech">Boundary-Layer Convection</span>
+          </div>
+          <p class="jargon-simple">
+            High winds blow away the humid air blanket above plant leaves, acting like a giant blow-dryer that sucks water out of the crop twice as fast (&beta; = +0.125).
+          </p>
+          <div class="jargon-analogy">
+            💡 Just like clothes dry much faster on a windy day, crops get thirsty much faster when wind speed spikes!
+          </div>
+        </div>
+
+        <div class="jargon-card">
+          <div class="jargon-term">
+            <span>Flowering vs. Harvest Stage</span>
+            <span class="jargon-tech">Phenological Crop Coefficient (Kc)</span>
+          </div>
+          <p class="jargon-simple">
+            Plants have life stages: baby (sowing), teen (vegetative), producing flowers/fruit (flowering), and retirement (harvest). <strong>Flowering is the thirstiest stage</strong> (&beta; = +0.120), while harvest requires withholding water (&beta; = -0.117).
+          </p>
+          <div class="jargon-analogy">
+            💡 If a plant gets thirsty while blooming, pollination fails and yield collapses. Near harvest, farmers stop watering so crops can ripen.
+          </div>
+        </div>
+
+        <div class="jargon-card">
+          <div class="jargon-term">
+            <span>Mulching Used (Yes / No)</span>
+            <span class="jargon-tech">Evaporation Suppression Barrier</span>
+          </div>
+          <p class="jargon-simple">
+            Covering the soil with a layer of straw, dry leaves, or biodegradable sheeting. It shades the soil from harsh sunlight and blocks evaporation (&beta; = -0.070).
+          </p>
+          <div class="jargon-analogy">
+            💡 Like putting a lid on a pot of boiling water so the steam doesn't escape into the air.
+          </div>
+        </div>
+
+        <div class="jargon-card">
+          <div class="jargon-term">
+            <span>Soil pH & Electrical Conductivity (EC)</span>
+            <span class="jargon-tech">Chemical Bioavailability & Salinity</span>
+          </div>
+          <p class="jargon-simple">
+            <strong>pH:</strong> Measures whether soil is sour/acidic or sweet/alkaline. <br/>
+            <strong>EC (Salinity):</strong> Measures how salty the soil is. High salt prevents roots from drinking water even if the soil is wet!
+          </p>
+          <div class="jargon-analogy">
+            💡 Drinking seawater makes you thirstier; high salinity makes it hard for crops to absorb moisture.
+          </div>
+        </div>
+
+        <div class="jargon-card">
+          <div class="jargon-term">
+            <span>RMSE (0.3649) & R² (57.65%)</span>
+            <span class="jargon-tech">Validation Regression Metrics</span>
+          </div>
+          <p class="jargon-simple">
+            <strong>RMSE (Error Margin):</strong> On a scale of 0 to 2, our model's average prediction is off by only 0.36 points (extremely accurate). <br/>
+            <strong>R²:</strong> The model successfully explains nearly 58% of all natural variations across the fields.
+          </p>
+          <div class="jargon-analogy">
+            💡 Like an archery target where almost every single arrow lands within millimeters of the bullseye.
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -1212,10 +1512,10 @@ def build_index_html():
 
   <!-- Footer -->
   <footer>
-    <p><strong>Smart Irrigation System Prediction</strong> &bull; Developed for INT315 (Cluster Computing)</p>
-    <p>Submitted by <strong>Roshan Kumar</strong> (Reg: 12322743 | Roll: 67 | Section: K4M2310A)</p>
-    <p>School of Computer Science & Engineering &bull; <strong>Lovely Professional University, Punjab (India)</strong></p>
-    <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--text-dim);">&copy; 2026 Roshan Kumar. Hosted on GitHub Pages.</p>
+    <p><strong>Smart Irrigation System Prediction</strong> &bull; An Enterprise Precision Agronomy Machine Learning System</p>
+    <p>Developed by <strong>Roshan Kumar</strong> &bull; Lovely Professional University, Punjab (India)</p>
+    <p>Deployed with Apache Spark 3.5.9 on Standalone Cluster Architecture</p>
+    <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--text-dim);">&copy; 2026 Roshan Kumar. Hosted globally via GitHub Pages.</p>
   </footer>
 
   <!-- EMBEDDED MODEL WEIGHTS & CLIENT-SIDE SCRIPT -->
