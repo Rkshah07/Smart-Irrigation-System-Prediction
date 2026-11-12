@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.StringIndexerModel","timestamp":1793977499076,"sparkVersion":"3.5.9","uid":"StringIndexer_73577670a795","paramMap":{"outputCol":"Soil_Type_idx","inputCol":"Soil_Type","handleInvalid":"keep"},"defaultParamMap":{"outputCol":"StringIndexer_73577670a795__output","stringOrderType":"frequencyDesc","handleInvalid":"error"}}

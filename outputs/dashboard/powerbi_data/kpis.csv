@@ -1,0 +1,9 @@
+Metric,Value,Category
+Total Train Observations,630000.0,Scale
+Total Test Observations,270000.0,Scale
+Validation RMSE,0.36486,Regression
+Validation R2,0.57645,Regression
+Validation MAE,0.29023,Regression
+Validation Accuracy,0.83286,Classification
+Optimal regParam,0.01,Hyperparameter
+Optimal elasticNetParam,0.0,Hyperparameter

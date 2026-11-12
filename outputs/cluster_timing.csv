@@ -1,0 +1,5 @@
+Configuration,Cores,Master_URL,Elapsed_Seconds,Speedup,Efficiency_Pct
+1 Core (local[1]),1,local[1],15.52,1.0,100.0
+2 Cores (local[2]),2,local[2],11.287,1.38,68.8
+4 Cores (local[4]),4,local[4],12.198,1.27,31.8
+"All Cores (local[*], 8)",8,local[*],14.653,1.06,13.2

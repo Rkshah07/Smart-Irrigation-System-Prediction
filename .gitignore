@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Large Raw Datasets (Re-download using python data/download_dataset.py)
+data/train.csv
+data/test.csv
+
+# Temporary JVM crash logs
+hs_err_pid*.log
+replay_pid*.log
+work/

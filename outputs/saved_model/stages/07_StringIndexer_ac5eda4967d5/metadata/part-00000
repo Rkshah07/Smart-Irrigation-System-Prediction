@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.StringIndexerModel","timestamp":1793977501133,"sparkVersion":"3.5.9","uid":"StringIndexer_ac5eda4967d5","paramMap":{"inputCol":"Mulching_Used","handleInvalid":"keep","outputCol":"Mulching_Used_idx"},"defaultParamMap":{"stringOrderType":"frequencyDesc","handleInvalid":"error","outputCol":"StringIndexer_ac5eda4967d5__output"}}

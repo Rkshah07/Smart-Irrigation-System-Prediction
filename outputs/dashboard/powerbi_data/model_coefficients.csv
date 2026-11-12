@@ -1,0 +1,16 @@
+index,feature,raw_name,coefficient,abs_coefficient
+0,Soil_Moisture,Soil_Moisture_imputed,-0.21145682565866578,0.21145682565866578
+7,Wind_Speed_kmh,Wind_Speed_kmh_imputed,0.1247089134682848,0.1247089134682848
+23,Crop_Growth_Stage = Flowering,Crop_Growth_Stage_vec_Flowering,0.11958595224866614,0.11958595224866614
+22,Crop_Growth_Stage = Harvest,Crop_Growth_Stage_vec_Harvest,-0.11737001649614846,0.11737001649614846
+25,Crop_Growth_Stage = Sowing,Crop_Growth_Stage_vec_Sowing,-0.11231080162977311,0.11231080162977311
+24,Crop_Growth_Stage = Vegetative,Crop_Growth_Stage_vec_Vegetative,0.1099104868238705,0.1099104868238705
+42,Mulching_Used = Yes,Mulching_Used_vec_Yes,-0.07024053703460326,0.07024053703460326
+41,Mulching_Used = No,Mulching_Used_vec_No,0.07024053700995918,0.07024053700995918
+5,Rainfall_mm,Rainfall_mm_imputed,-0.039037374265916115,0.039037374265916115
+38,Water_Source = Groundwater,Water_Source_vec_Groundwater,-0.007307907928875543,0.007307907928875543
+36,Water_Source = Reservoir,Water_Source_vec_Reservoir,0.0069190758816525325,0.0069190758816525325
+4,Humidity,Humidity_imputed,0.00673425342494487,0.00673425342494487
+31,Irrigation_Type = Canal,Irrigation_Type_vec_Canal,0.006113065858476274,0.006113065858476274
+9,Previous_Irrigation_mm,Previous_Irrigation_mm_imputed,0.005536394535038678,0.005536394535038678
+8,Field_Area_hectare,Field_Area_hectare_imputed,0.005280008518231897,0.005280008518231897

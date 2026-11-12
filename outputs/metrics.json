@@ -1,0 +1,46 @@
+{
+  "model": "LinearRegression",
+  "hyperparameters": {
+    "regParam": 0.01,
+    "elasticNetParam": 0.0,
+    "tuning_method": "3-Fold CrossValidator"
+  },
+  "regression_metrics": {
+    "validation": {
+      "rmse": 0.36486,
+      "r2": 0.57645,
+      "mae": 0.29023
+    },
+    "training": {
+      "rmse": 0.36372,
+      "r2": 0.57826,
+      "mae": 0.28973
+    },
+    "generalization_gap": {
+      "delta_rmse": 0.00114,
+      "delta_r2": 0.00181
+    }
+  },
+  "classification_metrics": {
+    "validation_accuracy": 0.83286,
+    "training_accuracy": 0.83196,
+    "confusion_matrix": {
+      "Low": {
+        "Low": 63143,
+        "Medium": 10968,
+        "High": 0
+      },
+      "Medium": {
+        "Low": 5861,
+        "Medium": 41739,
+        "High": 2
+      },
+      "High": {
+        "Low": 25,
+        "Medium": 4196,
+        "High": 17
+      }
+    }
+  },
+  "methodological_limitation_note": "Linear Regression treats the target as continuous, unbounded, and equidistant with homoscedastic errors. For an ordinal classification target (Low=0, Medium=1, High=2), standard Linear Regression may yield predictions beyond valid bounds (<0 or >2) and cannot model non-linear class decision boundaries or class imbalance as naturally as Ordinal Logistic Regression, Random Forests, or Gradient Boosted Decision Trees."
+}
